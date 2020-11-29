@@ -1,6 +1,6 @@
 <!--index.wxml-->
 <view class="container">
-
+  <hs-navigation-bar style="width: 100%"></hs-navigation-bar>
   <!-- 用户 openid -->
   <view class="userinfo">
     <button 

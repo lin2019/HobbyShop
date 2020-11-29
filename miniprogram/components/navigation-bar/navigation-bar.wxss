@@ -1,0 +1,17 @@
+/* components/navigation-bar/navigation-bar.wxss */
+.bar-wrapper {
+  height: 200rpx;
+  display: flex;
+  align-items: center;
+  background: #FFA500;
+  color: #fff;
+  font-size: 14px;
+  padding-left: 10rpx;
+}
+.position {
+  display: flex;
+  align-items: center;
+}
+.search {
+  width: 50%;
+}

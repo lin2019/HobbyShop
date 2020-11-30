@@ -7,7 +7,8 @@ Page({
     userInfo: {},
     logged: false,
     takeSession: false,
-    requestResult: ''
+    requestResult: '',
+    paddingTop: app.globalData.menuBar.screentHeight
   },
 
   onLoad: function() {

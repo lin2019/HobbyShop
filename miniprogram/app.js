@@ -1,5 +1,6 @@
 //app.js
 App({
+  globalData: {},
   onLaunch: function () {
     if (!wx.cloud) {
       console.error('请使用 2.2.3 或以上的基础库以使用云能力')
@@ -14,6 +15,25 @@ App({
       })
     }
 
-    this.globalData = {}
+    // this.globalData = {}
+
+    // 获取胶囊和导航栏信息
+    let menuBtn = wx.getMenuButtonBoundingClientRect();
+    this.globalData.menuBar = {};
+    this.globalData.menuBar.top = menuBtn.top;
+    this.globalData.menuBar.height = menuBtn.height;
+    wx.getSystemInfo({
+      success: (result) => {
+        let barHeight = result.statusBarHeight;
+        this.globalData.menuBar.screentHeight = barHeight + menuBtn.height + (menuBtn.top - barHeight) * 2;
+        console.log(this.globalData.menuBar);
+      },
+      fail: (error) => {
+        wx.showToast({
+          title: '获取设备信息失败',
+          icon: 'none'
+        })
+      }
+    })
   }
 })
